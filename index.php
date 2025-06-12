@@ -42,3 +42,82 @@ var_dump($company3);
 var_dump($company4);
 var_dump($company5);*/
 
+die();
+
+
+class Continent
+{
+  public $nameContinent;
+
+  public function __construct($continent)
+  {
+    $this->nameContinent = $continent;
+  }
+
+}
+
+class Country extends Continent
+{
+ public $nameCountry;
+
+  public function __construct($country)
+  {
+    $this->nameCountry = $country;
+  }
+  }
+
+
+class Region extends Country
+{
+  public $nameRegion;
+  public function __construct($region)
+  {
+    $this->nameRegion = $region;
+  }
+
+}
+
+class Province extends Region
+{
+  public $nameProvince;
+  public function __construct($province)
+  {
+    $this->nameProvince = $province;
+  }
+
+}
+
+class City extends Province
+{
+  public $nameCity;
+  public function __construct($city)
+  {
+    $this->nameCity = $city;
+  }
+
+}
+class Street extends City
+{
+  public $nameStreet;
+  public function __construct($street)
+  {
+    $this->nameStreet = $street;
+  }
+
+}
+
+$continente = new Continent('');
+$paese = new Country('');
+$regione = new Region('');
+$citta = new City('');
+$strada = new Street('');
+
+
+$myLocation = 
+
+{
+    public function getMyCurrentLocation()
+    {
+        echo "Mi trovo in $this->nameContinent $this->$nameCountry $this->$nameRegion $this->$nameCity $this->nameStreet \n";
+    }
+}
