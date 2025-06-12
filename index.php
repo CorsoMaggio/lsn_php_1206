@@ -60,8 +60,8 @@ class Country extends Continent
 {
  public $nameCountry;
 
-  public function __construct($country)
-  {
+  public function __construct($continent,$country)
+  { parent::__construct($continent);
     $this->nameCountry = $country;
   }
   }
@@ -70,18 +70,22 @@ class Country extends Continent
 class Region extends Country
 {
   public $nameRegion;
-  public function __construct($region)
-  {
+  public function __construct($continent,$country,$region)
+  { parent::__construct($continent, $country);
     $this->nameRegion = $region;
   }
 
+    public function getMyCurrentLocation()
+    {
+        echo "Mi trovo in $this->nameContinent $this->$nameCountry $this->$nameRegion $this->$nameCity $this->nameStreet \n";
+    }
 }
 
 class Province extends Region
 {
   public $nameProvince;
-  public function __construct($province)
-  {
+  public function __construct($continent,$country,$region,$province)
+  { parent::__construct($continent, $country, $region);
     $this->nameProvince = $province;
   }
 
@@ -90,8 +94,9 @@ class Province extends Region
 class City extends Province
 {
   public $nameCity;
-  public function __construct($city)
-  {
+  public function __construct($continent,$country,$region,$province,$city)
+  
+  { parent::__construct( $continent, $country, $region, $province);
     $this->nameCity = $city;
   }
 
@@ -99,25 +104,16 @@ class City extends Province
 class Street extends City
 {
   public $nameStreet;
-  public function __construct($street)
-  {
+  public function __construct($continent,$country,$region,$province,$city,$street)
+  { parent::__construct($continent, $country, $region, $province, $city);
     $this->nameStreet = $street;
   }
 
 }
-
-$continente = new Continent('');
+/*$continente = new Continent('');
 $paese = new Country('');
 $regione = new Region('');
-$citta = new City('');
+$citta = new City('');*/
 $strada = new Street('');
 
-
-$myLocation = 
-
-{
-    public function getMyCurrentLocation()
-    {
-        echo "Mi trovo in $this->nameContinent $this->$nameCountry $this->$nameRegion $this->$nameCity $this->nameStreet \n";
-    }
-}
+$myLocation = new 
