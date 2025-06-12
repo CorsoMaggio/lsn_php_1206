@@ -13,7 +13,7 @@ $students = [
 singolare
 prima lettera maiuscola  */
 
-
+/*
 
 class Person
 {
@@ -46,7 +46,7 @@ echo "Ciao, mi chiamo $this ->firstname $this->lastname \n";
 $leysan = new Person('Leysan', 'Nasretdinova', '19'); //un oggetto nuovo
 $giuseppina = new Person('Giuseppina', 'Zibibbo', '38');
 
-die();
+*/
 
 
 //------ Ereditarieta -----//
